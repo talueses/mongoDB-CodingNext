@@ -1,0 +1,191 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Ponencia para el Parkode NEXT. Mongodb no es para todos, ni para todos.">
+    <meta name="author" content="Unknown Kadaba. Talueses">
+
+		<title>MongoDB - NoSQL no es para todo, ni pata todos.</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<!--<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>-->
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+        <section>
+          <h1>MongoDB</h1>
+            <h3>Una base de datos no relacional, que no debemos usar por moda.</h3>
+              <p>
+                <small>Realizado por <a href="http://github.com/talueses">Talueses</a> / </small>
+              </p>
+        </section>
+        <section>
+          <section>
+            <h3>MongoDB</h3>
+            <p>Según Wikipedia: "Humongous" == Enorme. Es un sistema de base de datos NoSQL orientado a documentos, desarrollado bajo el concepto de código abierto.</p>
+          </section>
+          <section>
+            <h3>Aclaremos algo, SQL es:</h3>
+            <p>Structured Query Languaje.</p>
+          </section>
+          <section>
+            <h3>Y NoSQL:</h3>
+            <p>...</p>
+            <small class="fragment fade-in">*Todos deben gritar al unísono la respuesta...*</small>
+          </section>
+          <section>
+            <img src="/img/joke.jpg" alt="Funny, it'sn?"/>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Ventajas de NoSQL:</h3>
+            <ul>
+              <li> Object-oriented programming.</li>
+              <li> Flexible.</li>
+              <li> Volúmen de datos.</li>
+              <li> Velocidad de proceso.</li>
+              <li> Escalabilidad.</li>
+              <li> Schemas mutables.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Desventajas de NoSQL:</h3>
+            <ul>
+              <li> Normalización de estándars.</li>
+              <li> Atomicidad de las instrucciones.</li>
+              <li> Flexibilidad.</li>
+              <li> Schemas mutables.</li>
+              <li> Las tareas/consultas las debe hacer tu aplicación.</li>
+              <li> Renunciar a SQL.</li>
+              <li> No hay ACID.</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Vamos a "filosofar" un poco...</h2>
+        </section>
+        
+        <section>
+          <section>
+            <h3>Modas... Tendencias...</h3>
+            <ul>
+              <li>M.E.A.N.</li>
+              <li>"FullStack"</li>
+              <li>Frameworks.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Modas... Tendencias - ¿Para qué?</h3>
+            <p>Jugar con nuestro ego. Fin.</p>
+          </section>
+          <section>
+            <h3>Modas... Tendencias... ¿Por qué?</h3>
+            <p>Somos un producto. Eso es.</p>
+          </section>
+          <section>
+            <h3>Modas... Tendencias... ¿Debido a?</h3>
+            <p>Quieren más, por menos. Así es. Así fue</p>
+          </section>
+          <section>
+            <h3>Modas y tendencias, ¿en serio?</h3>
+            <p>Sí. Perdimos el amor a nuestro trabajo. Estamos siendo animales domesticados.</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>Vamos a hacer una aplicación...</h2>
+            <h4 class="fragment">¿Qué vamos a usar?</h4>
+            <h4 class="fragment">"¿Cuándo usar MongoDB? (NoSQL)"</h4>
+            <h4 class="fragment">"¿Por qué no usamos MongoDB?"</h4>
+            <h4 class="fragment">"Yo creo que podemos usar MongoDB..."</h4>
+            <h4 class="fragment">"¿Qué base de datos se centra exclusivamente en esas tareas?"</h4>
+          </section>
+          <section>
+            <h3>¿Todo lo que hay es MongoDB?</h3>
+            <p>Sí, claro, seguro...</p>
+            <small>MongoDB y Redis son buenas opciones para el almacenamiento de escritura con alta frecuencia.
+              Hadoop, una libre, DB distribuida que hace un buen trabajo almacenando grandes de datos tales como;
+              estadísticas del tiempo o el trabajo de análisis de negocio.
+              Memcache, una DB transeúnte, destaca en la web, el almacenamiento de sesiones, y las estadísticas a corto plazo.
+              Cassandra y Riak (clusters automáticos, tiendas redundantes) un buen rendimiento en entornos con
+              aplicaciones de alta disponibilidad, donde el tiempo de funcionamiento máximo es de vital importancia. 
+              CouchDB...</small>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>La pregunta es:</h3>
+            <h2>¿Por qué no necesito una base de datos No relacional?</h2>
+          </section>
+          <section>
+            <h3>Cuando usar MongoDB(No SQL)</h3>
+            <ul>
+              <li class="fragment fade-in">Tu data no tiene sentido.</li>
+              <li class="fragment fade-in">Tu data es tipo: Documentos, Key-value, grafos...</li>
+              <li class="fragment fade-in">Para obtener un dato, usas múltiples JOINs...</li>
+              <li class="fragment fade-in">Estás rompiendo con el esquema relacional.</li>
+              <li class="fragment fade-in">La persistencia en los datos, no es prioridad.</li>
+              <li class="fragment fade-in">La estructura de datos que manejamos son variables.</li>
+              <li class="fragment fade-in">La necesidad del proceso, no se prevee.</li>
+            </ul>
+          </section>
+          <section>
+            <h3>Cuando usar MongoDB (No SQL)</h3>
+            <ul>
+              <li>Y sobretodo cuando...</li>
+              <li class="fragment fade-in">Cuando queremos ser "fancy", y no tenemos claro lo que queremos. </li>
+              <p>Allí está muy bien que usemos MongoDB.</p>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section style="text-align: left;">
+					  <h1>THE END.</h1>
+            <h3>Por ahora...</h3>
+					    <p>
+						    - <a href="http://github.com/talueses">Repositorio para la lámina</a> <br>
+						    - <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation for Reveal.js</a>
+					    </p>
+          </section>
+        </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
